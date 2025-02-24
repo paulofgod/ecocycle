@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<br><br><br>
+<div class="container my-5">
+    <h1 class="text-center mb-4">About Us</h1>
+    
+    <p class="lead text-center">EcoCycle is a platform dedicated to the selling and resale of old recyclable materials to help reduce waste, promote sustainability, and protect the environment.</p>
+
+    <p>Our mission is simple: to encourage the reuse of materials that would otherwise end up in landfills, all while providing our customers with the opportunity to recycle items such as old clothes, plastics, metal, tin, and paper. By reselling these materials, we contribute to a cleaner and greener planet for future generations.</p>
+
+    <hr>
+
+    <h2 class="text-center my-4">Why Recycle?</h2>
+    <p class="text-center">Recycling is one of the simplest and most effective ways to reduce waste and preserve the environment. Here’s how recycling the following materials can make a difference:</p>
+
+    <div class="row">
+        <!-- Old Clothes Section -->
+        <div class="col-md-4 my-3">
+            <div class="card">
+                <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/a586de7d2dc6a667e0923e14fb2d84a4.jpg' %}" class="card-img-top" alt="Old Clothes">
+                <div class="card-body">
+                    <h5 class="card-title">Old Clothes</h5>
+                    <p class="card-text">Old clothes can be resold or repurposed, reducing the need for new textile production, which is a major environmental burden. By reusing clothes, we conserve water, reduce carbon emissions, and decrease textile waste. Recycling fabrics also creates new jobs and reduces the demand for new raw materials.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plastics Section -->
+        <div class="col-md-4 my-3">
+            <div class="card">
+                <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/02617dc83b1384969425b8c2bf79a7e0.jpg' %}" class="card-img-top" alt="Plastics">
+                <div class="card-body">
+                    <h5 class="card-title">Plastics</h5>
+                    <p class="card-text">Plastic recycling reduces the demand for petroleum-based products, minimizes plastic pollution in the environment, and cuts down on waste in landfills. By recycling plastics, we help conserve resources, reduce energy consumption, and protect wildlife that often falls victim to plastic waste.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metals Section -->
+        <div class="col-md-4 my-3">
+            <div class="card">
+                <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/858a20b43bc0f7d18129fdc6e83bb61b.jpg' %}" class="card-img-top" alt="Metal">
+                <div class="card-body">
+                    <h5 class="card-title">Metals</h5>
+                    <p class="card-text">Recycling metals, such as aluminum and steel, requires less energy than extracting raw materials. This leads to lower carbon emissions and less environmental degradation. By recycling metals, we conserve natural resources, prevent pollution, and reduce the energy needed for metal production.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Tin Section -->
+        <div class="col-md-4 my-3">
+            <div class="card">
+                <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/2e84ba95c4b0ccf676bb3393b117bedd.jpg' %}" class="card-img-top" alt="Tin">
+                <div class="card-body">
+                    <h5 class="card-title">Tin</h5>
+                    <p class="card-text">Tin recycling helps reduce the need for mining new tin ores, which can have a devastating impact on the environment. By recycling tin, we conserve natural habitats, reduce energy use, and keep harmful waste out of landfills and oceans, which can help in sustaining biodiversity.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paper Section -->
+        <div class="col-md-4 my-3">
+            <div class="card">
+                <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/fa9fc2e7510a368171d8d672d75b3e6c.jpg' %}" class="card-img-top" alt="Paper">
+                <div class="card-body">
+                    <h5 class="card-title">Paper</h5>
+                    <p class="card-text">Recycling paper helps reduce deforestation, saving trees that are crucial for absorbing CO2 and producing oxygen. By reusing paper, we save water, reduce energy use, and prevent paper waste from piling up in landfills. It’s a simple yet powerful way to promote environmental sustainability.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h3 class="text-center my-5">Join Us in Making a Difference</h3>
+    <p class="text-center">At EcoCycle, we believe that small actions can lead to big changes. By choosing to recycle and reuse, you’re not just cleaning up the environment; you're also helping to reduce the carbon footprint, save resources, and ensure a sustainable future for the planet. Whether you're buying or selling recyclable materials, you are playing a part in creating a greener, more sustainable world.</p>
+
+    <div class="text-center">
+        <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg">Start Recycling Now</a>
+    </div>
+</div>
+{% endblock %}

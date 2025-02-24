@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Ecocycle</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'startbootstrap-new-age-gh-pages/css/styles.a5c218075c3d.css' %}">
+        <link rel="stylesheet" href="{% static 'startbootstrap-new-age-gh-pages/css/styles.css' %}">
+        <style>
+            body {
+              background: linear-gradient(135deg, #fefefe, #f4f1e1, #f7f1e1, #fefefe);
+              background-size: 400% 400%;
+              animation: gradientAnimation 10s ease infinite;
+            }
+        
+            @keyframes gradientAnimation {
+              0% {
+                background-position: 0% 50%;
+              }
+              50% {
+                background-position: 100% 50%;
+              }
+              100% {
+                background-position: 0% 50%;
+              }
+            }
+          </style>
+          <style>
+            .card {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+        
+            .card-body {
+                display: flex;
+                flex-direction: column;
+            }
+        
+            .card-text {
+                flex-grow: 1; /* Allow description text to take up available space */
+            }
+        
+            .btn {
+                margin-top: auto; /* Push the button to the bottom of the card */
+            }
+        
+            .card-img-top {
+                width: 100%; /* Ensures the image fills the width of the card */
+                height: 200px; /* Fixed height for all images */
+                object-fit: cover; /* This ensures the image covers the entire space without distorting its aspect ratio */
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        
+        
+        <!-- Masthead header-->
+        <!-- Masthead header-->
+<header class="masthead">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <!-- Masthead text only-->
+                <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                    <h1 class="display-1 lh-1 mb-3">Don't throw it away, sell it and make money on <strong>ECOCYCLE</strong>.</h1>
+                    <p class="lead fw-normal text-muted mb-5">Sell anything you want at cheap and affordable rates with option buy!</p>
+                    <div class="d-flex flex-column flex-lg-row align-items-center">
+                        <!-- Replace Google Play Link with "POST PRODUCT" Button -->
+                        <a href="{% url 'login' %}" class="btn btn-primary btn-lg mb-4 mb-lg-0" role="button">POST PRODUCT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- Masthead single image on the right-->
+                <div class="masthead-device-mockup">
+                    <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/6bb8ed05ae618806b09486b5f5959f9d.png' %}" alt="App Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <!-- Featured Products Section-->
+        <section id="featured-products" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Featured Products</h2>
+                <div class="row">
+                    {% for product in latest_products %}
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <p class="card-text">{{ product.description }}</p>
+                                    <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Go to Store button -->
+                <div class="text-center mt-4">
+                    <a href="{% url 'product_list' %}" class="btn btn-secondary">Go to Store</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="meet-the-team" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Meet the Team</h2>
+                <div class="row">
+                    <!-- Team Member 1-->
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="team-member">
+                            <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/IMG-20250210-WA0014-2.jpg' %}" alt="Team Member" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                            <h5>Chisom Obi-Okonkwo</h5>
+                            <p class="text-muted">Technical Developer</p>
+                        </div>
+                    </div>
+                    <!-- Team Member 2-->
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="team-member">
+                            <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/IMG-20250210-WA0015.jpg' %}" alt="Team Member" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                            <h5>Burabari Bakpo</h5>
+                            <p class="text-muted">Sustainablity Analyst</p>
+                        </div>
+                    </div>
+                    <!-- Team Member 3-->
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="team-member">
+                            <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/VkXHWKSawlTAeiky-croppedBEFij-jpg.jpg' %}" alt="Team Member" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                            <h5>Gabriel Kalu</h5>
+                            <p class="text-muted">Design Specialist</p>
+                        </div>
+                    </div>
+                    <!-- Team Member 4-->
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="team-member">
+                            <img src="{% static 'startbootstrap-new-age-gh-pages/assets/img/IMG-20250210-WA0017.jpg' %}" alt="Team Member" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+                            <h5>Success Nwankpa</h5>
+                            <p class="text-muted">Team Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+
+{% endblock %}

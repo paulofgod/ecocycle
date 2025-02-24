@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <br><br><br>
+  <div class="container">
+    <h2 class="text-center my-5">Product Categories</h2>
+    
+    <div class="row">
+      {% for cat in category %}
+        <div class="col-md-3 mb-4">
+          <a href="{% url 'products_by_category' category_name=cat %}" class="btn btn-primary btn-block">
+            {{ cat|capfirst }}
+          </a>
+        </div>
+      {% empty %}
+        <p>No categories available.</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
+

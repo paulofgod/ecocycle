@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br><br>
+  <div class="container">
+    <h2 class="text-center my-5">Products in "{{ category_name|capfirst }}" Category</h2>
+    
+    <div class="row">
+      {% if products %}
+        {% for product in products %}
+          <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+              {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+              {% else %}
+                <img src="https://via.placeholder.com/200" alt="{{ product.name }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description|truncatewords:15 }}</p>
+                <p><strong>Price:</strong> N{{ product.price }}</p>
+                <p><strong>Quantity:</strong> {{ product.quantity }}</p>
+                <p><strong>Category:</strong> {{ product.category|capfirst }}</p>
+                <a href="{% url 'product_detail' product.id %}" class="btn btn-info btn-block">View Details</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No products available in this category.</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
