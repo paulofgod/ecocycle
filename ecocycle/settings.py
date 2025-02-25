@@ -27,7 +27,7 @@ load_dotenv()
 SECRET_KEY = 'django-insecure-fd_*vl1d2f^yt5x!1&4t9#@7$%(^cyrr$2ym8*w##esja#+-$v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ecocycle-production.up.railway.app', 'https://ecocycle-production.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://ecocycle-production.up.railway.app']
