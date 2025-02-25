@@ -1,6 +1,12 @@
 # Use the official Python image
 FROM python:3.9-slim
 
+# Install PostgreSQL development libraries
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
