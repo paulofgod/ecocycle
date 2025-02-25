@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-fd_*vl1d2f^yt5x!1&4t9#@7$%(^cyrr$2ym8*w##esja#+-$v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = []
+ALLOWED_HOSTS = ['ecocycle-production.up.railway.app', 'https://ecocycle-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['ecocycle-production.up.railway.app', 'https://ecocycle-production.up.railway.app']
 
 # Application definition
 
