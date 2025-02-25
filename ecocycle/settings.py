@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-fd_*vl1d2f^yt5x!1&4t9#@7$%(^cyrr$2ym8*w##esja#+-$v
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+CSRF_TRUSTED_ORIGINS = []
 
 # Application definition
 
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'store',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
